@@ -16,9 +16,17 @@
     <jersey.spring3>2.24</jersey.spring3>
     <jersey.version>2.23.2</jersey.version>
     <jetty.version>9.2.10.v20150310</jetty.version>
+    <db.h2>1.4.193</db.h2>
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${db.h2}</version>
+      <scope>runtime</scope>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.commons</groupId>
