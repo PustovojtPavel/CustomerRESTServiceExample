@@ -9,6 +9,8 @@
 
   <properties>
     <lb.ver>1.16.10</lb.ver>
+    <spring.jdbc>4.3.4.RELEASE</spring.jdbc>
+    <spring.mvc>4.3.4.RELEASE</spring.mvc>
   </properties>
 
   <dependencies>
@@ -18,6 +20,18 @@
       <artifactId>lombok</artifactId>
       <version>${lb.ver}</version>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.mvc}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.jdbc}</version>
     </dependency>
 
     <dependency>
