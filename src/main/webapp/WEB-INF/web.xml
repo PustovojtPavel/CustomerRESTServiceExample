@@ -3,5 +3,27 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>CustomerManager</display-name>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:webApplicationContext.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>CustomerManagerServlet</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>org.example.web.rest</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CustomerManagerServlet</servlet-name>
+    <url-pattern>service/rest/*</url-pattern>
+  </servlet-mapping>
 </web-app>
