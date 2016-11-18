@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -15,5 +16,17 @@ public class CustomerServiceImpl implements CustomerService {
 
     public List<Customer> getAll() {
         return customerDAO.getAll();
+    }
+
+    public Customer findById(UUID customerId) {
+        return customerDAO.findById(customerId);
+    }
+
+    @Override
+    public void create(String name) {
+        Customer customer = new Customer();
+        customer.setId(UUID.randomUUID());
+        customer.setName(name);
+        customerDAO.insert(customer);
     }
 }
