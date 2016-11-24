@@ -46,7 +46,6 @@ public class JDBCCustomerDAO implements CustomerDAO {
                 });
     }
 
-    @Override
     public void insert(Customer customer) {
         jdbcTemplate.update(SQL_INSERT_CUSTOMER,
                 new Object[] {customer.getId(), customer.getName()});
